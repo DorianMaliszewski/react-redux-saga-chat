@@ -1,0 +1,34 @@
+package fr.dorianmaliszewski.chat.controllers;
+
+import fr.dorianmaliszewski.chat.domains.Message;
+import fr.dorianmaliszewski.chat.repositories.MessageRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/messages")
+public class MessageController {
+
+    private final MessageRepository messageRepository;
+
+    @Autowired
+    public MessageController(MessageRepository messageRepository) {
+        this.messageRepository = messageRepository;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Message>> getMessages() {
+        return ResponseEntity.ok(messageRepository.findAll());
+    }
+
+    @GetMapping("/sayhello")
+    public ResponseEntity<String> sayHello() {
+        return ResponseEntity.ok("Hello world");
+    }
+
+}
