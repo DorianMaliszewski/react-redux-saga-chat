@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 class ChatMessageList extends Component {
     render() {
         return (
-            <div>
+            <div style={{width:'50%',float:'right'}}>
+                <p>Messages</p>
                 <ul>
-                    {this.props.usersConnected.forEach(u =>
+                    {this.props.users.forEach(u =>
                         <li>{u}</li>
                     )}
                 </ul>

@@ -10,8 +10,13 @@ function mapStateToProps(state) {
 class ChatUserList extends Component {
   render() {
     return (
-      <div>
-
+      <div  style={{width:'50%', float:'left'}}>
+        <h1>
+          Liste des utilisateurs
+        </h1>
+        <ul>
+          <li>Test</li>
+        </ul>
       </div>
     );
   }
