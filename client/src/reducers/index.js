@@ -7,4 +7,4 @@ import { combineReducers } from 'redux';
 export default combineReducers({
   chat,
   utilisateur
-})
+});
